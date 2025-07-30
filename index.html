@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>نتيجة الطالب</title>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            direction: rtl;
+            text-align: center;
+            background: linear-gradient(to right, #fefcea, #f1da36);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 100px auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 700px;
+        }
+        h1 {
+            color: #004085;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+        input {
+            padding: 10px;
+            font-size: 18px;
+            width: 200px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        button {
+            padding: 10px 25px;
+            font-size: 18px;
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: #004085;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0062cc;
+        }
+        #result {
+            margin-top: 30px;
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+            border: 2px solid #004085;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>جامعة أسيوط الأهلية - نتائج الامتحانات</h1>
+        <p>من فضلك أدخل رقم الجلوس:</p>
+        <input type="text" id="seatNumber" placeholder="ادخل رقم الجلوس">
+        <br>
+        <button onclick="showResult()">اعرض النتيجة</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function showResult() {
+            const seat = document.getElementById("seatNumber").value.trim();
+            const resultDiv = document.getElementById("result");
+            if (seat === "6320") {
+                resultDiv.innerHTML = '<img src="result.jpg" alt="نتيجة الطالب">';
+            } else {
+                resultDiv.innerHTML = "<p style='color:red; font-weight: bold;'>رقم الجلوس غير صحيح أو غير مسجل</p>";
+            }
+        }
+    </script>
+</body>
+</html>
